@@ -34,14 +34,13 @@ userRouter.put("/update-user-password", isAutheticated, updatePassword);
 
 userRouter.put("/update-user-avatar", isAutheticated, updateProfilePicture);
 
-// userRouter.get(
-//   "/get-users",
-//   isAutheticated,
-//   authorizeRoles("admin"),
-//   getAllUsers
-// );
-
-userRouter.get("/get-users", getAllUsers);
+userRouter.get(
+  "/get-users",
+  isAutheticated,
+  authorizeRoles("admin"),
+  getAllUsers
+);
+ 
 
 
 userRouter.put(
